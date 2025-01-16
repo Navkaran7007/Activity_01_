@@ -7,15 +7,24 @@ __version__ = "1.0.0"
 from genre.genre import Genre
 
 
-
 class LibraryItem:
     """
+    LibraryItem: Maintain LibraryItem Data.
     """
     def __init__(self, title : str, 
                  author : str ,
                  genre : Genre ):
         """
-        
+        Initializes the class attributes with argument values.
+        Args: 
+            title (str): The title of the LibraryItem.
+            author (str): The author of the LibraryItem.
+            genre (Genre): The genre to which the LibraryItem applies.
+
+        Raises:
+            ValueError: When title or author is blank, genre is 
+            invalid.
+
         """
         if len(title.strip()) > 0:
             self.__title = title

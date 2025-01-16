@@ -6,7 +6,6 @@ __author__ = "ACE Faculty"
 __version__ = "1.0.0"
 __credits__ = ""
 
-
 def main():
     """Test the functionality of the methods encapsulated 
     in this project.
@@ -17,7 +16,7 @@ def main():
 
     # 1. Code a statement which creates an instance of the LibraryItem class with valid inputs.
     # Use your own unique valid values for the inputs to the class.
-
+    
 
     # 2. Using the instance defined above, and the class Accessors, print 
     # each of the attributes of the LibraryItem instance.
