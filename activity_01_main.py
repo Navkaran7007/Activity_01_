@@ -4,7 +4,10 @@ the activity classes.
 """
 __author__ = "ACE Faculty"
 __version__ = "1.0.0"
-__credits__ = ""
+__credits__ = "Navkaran Singh Sidhu"
+
+from genre.genre import Genre
+from library_item.library_item import LibraryItem
 
 def main():
     """Test the functionality of the methods encapsulated 
@@ -16,16 +19,25 @@ def main():
 
     # 1. Code a statement which creates an instance of the LibraryItem class with valid inputs.
     # Use your own unique valid values for the inputs to the class.
-    
+    try:
+        Library = LibraryItem("Kingdom of Ash", "al sweigert",
+                                    Genre.TRUE_CRIME)
+        print(Library)
+    except ValueError as e:
+        print(e)
 
     # 2. Using the instance defined above, and the class Accessors, print 
     # each of the attributes of the LibraryItem instance.
-
-    
+    print(Library.title)
+    print(Library.author)
+    print(Library.genre)
 
     # 3. Code a statement which creates an instance of the LibraryItem class with one or more invalid inputs.
     # Use your own unique valid values for the inputs to the class.
-
-
+    try:
+        library_item = LibraryItem("", "al sweigert"
+                                 , Genre.TRUE_CRIME)
+    except ValueError as e:
+        print(e)
 if __name__ == "__main__":
     main()

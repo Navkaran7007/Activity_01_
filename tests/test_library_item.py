@@ -3,7 +3,6 @@ Description: Unit tests for the LibraryItem class.
 Usage: To execute all tests in the terminal execute 
 the following command:
     python -m unittest tests/test_book.py
-
 """
 __author__ = "Navkaran Singh Sidhu"
 __version__ = "1.0.0"
