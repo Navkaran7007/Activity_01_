@@ -11,21 +11,29 @@ class LibraryItem:
     """
     LibraryItem: Maintain LibraryItem Data.
     """
-    def __init__(self, title : str, 
+    def __init__(self, item_id : int,
+                 title : str, 
                  author : str ,
-                 genre : Genre ):
+                 genre : Genre,  
+                 is_borrowed : bool ):
         """
         Initializes the class attributes with argument values.
         Args: 
+            item_id (int): The Item Id of LibraryItem.
             title (str): The title of the LibraryItem.
             author (str): The author of the LibraryItem.
             genre (Genre): The genre to which the LibraryItem applies.
-
+            is_borrowed (bool) : The borrowed item of LibraryItem
         Raises:
             ValueError: When title or author is blank, genre is 
             invalid.
 
         """
+        if isinstance(item_id, int):
+            self.__item_id = item_id
+        else:
+            raise ValueError("Item Id must be numeric.")
+        
         if len(title.strip()) > 0:
             self.__title = title
         else:
@@ -40,6 +48,22 @@ class LibraryItem:
             self.__genre = genre
         else:
             raise ValueError("Invalid Genre")
+        
+        if isinstance(is_borrowed, bool):
+            self.__is_borrowed = is_borrowed
+        else:
+            raise ValueError("Is Borrowed must be a boolean value.")
+        
+    @property
+    def credit_hours(self) -> int:
+        """
+        Accessor for Item Id attribute.
+
+        Returns:
+            int: item_id value.
+
+        """
+        return self.__item_id
 
     @property
     def title(self) -> str:
@@ -73,6 +97,17 @@ class LibraryItem:
 
         """
         return self.__genre
+    
+    @property
+    def is_borrowed(self) -> bool:
+        """
+        Accessor for is_borrowed attribute.
+
+        Returns:
+            bool: boolean value.
+
+        """
+        return self.__is_borrowed
 
 
 
