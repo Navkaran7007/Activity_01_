@@ -3,15 +3,16 @@ Description: A client program written to verify correctness of
 the activity classes.
 """
 __author__ = "ACE Faculty"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __credits__ = "Navkaran Singh Sidhu"
 
 from genre.genre import Genre
 from library_item.library_item import LibraryItem
 
 def main():
-    """Test the functionality of the methods encapsulated 
-    in this project.
+    """
+    Test the functionality of the methods encapsulated 
+        in this project.
     """ 
     # In the statements coded below, ensure that any statement that could result 
     # in an exception is handled.  When exceptions are 'caught', display the exception 
@@ -20,23 +21,31 @@ def main():
     # 1. Code a statement which creates an instance of the LibraryItem class with valid inputs.
     # Use your own unique valid values for the inputs to the class.
     try:
-        Library = LibraryItem("Kingdom of Ash", "al sweigert",
-                                    Genre.TRUE_CRIME)
+        Library = LibraryItem(7007,
+                              "Kingdom of Ash", 
+                              "al sweigert",
+                              Genre.TRUE_CRIME, 
+                              True)
         print(Library)
     except ValueError as e:
         print(e)
 
     # 2. Using the instance defined above, and the class Accessors, print 
     # each of the attributes of the LibraryItem instance.
-    print(Library.title)
-    print(Library.author)
-    print(Library.genre)
+    print(f"Item Id:{Library.item_id}")
+    print(f"Title:{Library.title}")
+    print(f"Author:{Library.author}")
+    print(f"Genre:{Library.genre}")
+    print(f"Borrowed:{Library.is_borrowed}")
 
     # 3. Code a statement which creates an instance of the LibraryItem class with one or more invalid inputs.
     # Use your own unique valid values for the inputs to the class.
     try:
-        library_item = LibraryItem("", "al sweigert"
-                                 , Genre.TRUE_CRIME)
+        library_item = LibraryItem("ABC",
+                                   "Kingdom of Ash", 
+                                   "al sweigert",
+                                   Genre.TRUE_CRIME, 
+                                   True)
     except ValueError as e:
         print(e)
 if __name__ == "__main__":
