@@ -26,8 +26,7 @@ class LibraryItem:
             is_borrowed (bool) : The borrowed item of LibraryItem
         Raises:
             ValueError: When title or author is blank, genre is 
-            invalid.
-
+            invalid, Item_id is non-numeric and is_borrowed is non-boolean.
         """
         if isinstance(item_id, int):
             self.__item_id = item_id
@@ -53,9 +52,9 @@ class LibraryItem:
             self.__is_borrowed = is_borrowed
         else:
             raise ValueError("Is Borrowed must be a boolean value.")
-        
+
     @property
-    def credit_hours(self) -> int:
+    def item_id(self) -> int:
         """
         Accessor for Item Id attribute.
 
